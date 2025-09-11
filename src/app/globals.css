@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean slate - Pure monochrome design system */
+:root {
+  --white: 255 255 255;
+  --black: 0 0 0;
+  --gray-50: 249 250 251;
+  --gray-100: 243 244 246;
+  --gray-200: 229 231 235;
+  --gray-300: 209 213 219;
+  --gray-400: 156 163 175;
+  --gray-500: 107 114 128;
+  --gray-600: 75 85 99;
+  --gray-700: 55 65 81;
+  --gray-800: 31 41 55;
+  --gray-900: 17 24 39;
+  
+  /* Design system tokens */
+  --background: var(--white);
+  --foreground: var(--black);
+  --card: var(--gray-50);
+  --card-foreground: var(--black);
+  --primary: var(--black);
+  --primary-foreground: var(--white);
+  --secondary: var(--gray-50);
+  --secondary-foreground: var(--black);
+  --muted: var(--gray-100);
+  --muted-foreground: var(--gray-600);
+  --accent: var(--gray-100);
+  --accent-foreground: var(--black);
+  --border: var(--gray-200);
+  --input: var(--white);
+  --ring: var(--black);
+  --radius: 0.5rem;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    background-color: white;
+    color: black;
+    font-family: system-ui, sans-serif;
+  }
+  
+  html {
+    background-color: white;
+  }
+}
+
+/* Components layer - Clean monochrome components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white hover:bg-gray-800;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-black hover:bg-gray-200;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-gray-300 bg-white text-black hover:bg-gray-100 hover:text-black;
+  }
+  
+  .card {
+    @apply rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-black;
+    @apply ring-offset-white placeholder:text-gray-400;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+    @apply disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}

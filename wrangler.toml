@@ -1,0 +1,16 @@
+name = "peace-message"
+main = ".open-next/worker.js"
+compatibility_date = "2025-09-11"
+compatibility_flags = ["nodejs_compat"]
+
+# ビルド時の警告を抑制
+[build]
+command = ""
+watch_dir = "src"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[observability]
+enabled = true
