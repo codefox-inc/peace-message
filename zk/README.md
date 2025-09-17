@@ -6,6 +6,36 @@ Peace Messageアプリケーションの**実際の**ゼロ知識証明機能を
 
 このディレクトリには、**本物のcircom回路、Poseidonハッシュ、Groth16証明**を使用してメッセージの作成・証明・検証を行うNode.jsスクリプトが含まれています。学術論文レベルの完全なzk-SNARKsシステムです。
 
+## 🛠️ セットアップ
+
+### Circomのインストール
+
+このプロジェクトではCircom 2.1.9が必要です。以下の手順でインストールしてください：
+
+```bash
+# macOSの場合
+curl -L https://github.com/iden3/circom/releases/download/v2.1.9/circom-macos-amd64 -o circom
+chmod +x circom
+sudo mv circom /usr/local/bin/
+
+# Linuxの場合
+curl -L https://github.com/iden3/circom/releases/download/v2.1.9/circom-linux-amd64 -o circom
+chmod +x circom
+sudo mv circom /usr/local/bin/
+
+# または、ソースからビルド
+git clone https://github.com/iden3/circom.git
+cd circom
+cargo build --release
+sudo cp target/release/circom /usr/local/bin/
+```
+
+インストール確認：
+```bash
+circom --version
+# circom compiler 2.1.9
+```
+
 ## 🚀 クイックスタート
 
 ```bash
