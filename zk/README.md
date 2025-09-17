@@ -8,32 +8,24 @@ Peace Messageアプリケーションの**実際の**ゼロ知識証明機能を
 
 ## 🛠️ セットアップ
 
-### Circomのインストール
+### 前提条件
 
-このプロジェクトではCircom 2.1.9が必要です。以下の手順でインストールしてください：
+このプロジェクトはコンパイル済みの回路ファイルが含まれているため、**Circomコンパイラのインストールは不要**です。
+
+必要なもの：
+- Node.js 16以降
+- npm または yarn
+
+### 回路の再コンパイル（オプション）
+
+回路を変更する場合のみ、Circomコンパイラが必要です：
 
 ```bash
-# macOSの場合
-curl -L https://github.com/iden3/circom/releases/download/v2.1.9/circom-macos-amd64 -o circom
-chmod +x circom
-sudo mv circom /usr/local/bin/
+# npmでインストール（推奨）
+npm install -g circom
 
-# Linuxの場合
-curl -L https://github.com/iden3/circom/releases/download/v2.1.9/circom-linux-amd64 -o circom
-chmod +x circom
-sudo mv circom /usr/local/bin/
-
-# または、ソースからビルド
-git clone https://github.com/iden3/circom.git
-cd circom
-cargo build --release
-sudo cp target/release/circom /usr/local/bin/
-```
-
-インストール確認：
-```bash
-circom --version
-# circom compiler 2.1.9
+# または、snarkjsに含まれるツールを使用
+npx circom circuits/peace.circom --r1cs --wasm -o build/
 ```
 
 ## 🚀 クイックスタート
