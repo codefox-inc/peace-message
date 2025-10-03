@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:webpack": "next dev",
     "build": "next build",
     "cf:build": "opennextjs-cloudflare build",
     "cf:deploy": "npm run cf:build && wrangler deploy",
