@@ -6,7 +6,7 @@ const baseTimestamp = 1641024000000 // Fixed date: 2022-01-01 12:00:00 GMT
 export const mockMessages: PeaceMessage[] = [
   {
     messageId: '0x1a2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890',
-    text: 'May peace be with you always 🕊️',
+    text: 'Peace 🕊️',
     h: '0x2b3c4d5e6f7890abcdef1234567890abcdef1234567890abcdef1234567890ab',
     kioskId: 'KIOSK_001',
     timestamp: baseTimestamp - 60000,
@@ -14,7 +14,7 @@ export const mockMessages: PeaceMessage[] = [
   },
   {
     messageId: '0x2c3d4e5f6789abcdef1234567890abcdef1234567890abcdef1234567890abcd',
-    text: '世界に平和を願います ✨',
+    text: '平和 ✨',
     h: '0x3d4e5f6789abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
     kioskId: 'KIOSK_002',
     timestamp: baseTimestamp - 120000,
@@ -22,7 +22,7 @@ export const mockMessages: PeaceMessage[] = [
   },
   {
     messageId: '0x3e4f5678abcdef1234567890abcdef1234567890abcdef1234567890abcdef12',
-    text: 'Let love guide us all 💖',
+    text: 'Love 💖',
     h: '0x4f5678abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234',
     kioskId: 'KIOSK_001',
     timestamp: baseTimestamp - 180000,
@@ -30,7 +30,7 @@ export const mockMessages: PeaceMessage[] = [
   },
   {
     messageId: '0x456789abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234',
-    text: '愿世界和平与爱同在 🌍',
+    text: '和平 🌍',
     h: '0x56789abcdef1234567890abcdef1234567890abcdef1234567890abcdef12345',
     kioskId: 'KIOSK_003',
     timestamp: baseTimestamp - 240000,
@@ -38,10 +38,34 @@ export const mockMessages: PeaceMessage[] = [
   },
   {
     messageId: '0x56789abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890',
-    text: '평화로운 세상을 꿈꾸며 🌸',
+    text: 'Hope 🌸',
     h: '0x6789abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456',
     kioskId: 'KIOSK_002',
     timestamp: baseTimestamp - 300000,
+    scheme: 1,
+  },
+  {
+    messageId: '0x67890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567891',
+    text: 'Joy ⚓',
+    h: '0x7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567',
+    kioskId: 'KIOSK_004',
+    timestamp: baseTimestamp - 360000,
+    scheme: 1,
+  },
+  {
+    messageId: '0x78901abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567892',
+    text: 'Unity 🌅',
+    h: '0x8901abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234568',
+    kioskId: 'KIOSK_001',
+    timestamp: baseTimestamp - 420000,
+    scheme: 1,
+  },
+  {
+    messageId: '0x89012abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567893',
+    text: 'Kindness 💝',
+    h: '0x9012abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234569',
+    kioskId: 'KIOSK_003',
+    timestamp: baseTimestamp - 480000,
     scheme: 1,
   },
 ]

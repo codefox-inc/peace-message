@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_JP, Noto_Sans_SC, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from '@/contexts/theme-context';
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -41,9 +42,11 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${notoSansJP.variable} ${notoSansSC.variable} ${notoSansKR.variable} font-sans antialiased`}
       >
-        <div className="min-h-screen flex flex-col">
-          {children}
-        </div>
+        <ThemeProvider>
+          <div className="min-h-screen flex flex-col">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
