@@ -589,10 +589,9 @@ export function WaitingScreen() {
                           },
                         }}
                       >
-                        <MessageCard 
-                          message={message} 
+                        <MessageCard
+                          message={message}
                           onVerify={handleVerifyMessage}
-                          delay={0}
                           isBalloonTheme={true}
                           balloonColorIndex={colorIndex}
                           onOutOfBounds={handleBalloonOutOfBounds}
@@ -607,12 +606,11 @@ export function WaitingScreen() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <AnimatePresence mode="popLayout">
-                  {messages.map((message, index) => (
-                    <MessageCard 
+                  {messages.map((message) => (
+                    <MessageCard
                       key={message.messageId}
-                      message={message} 
+                      message={message}
                       onVerify={handleVerifyMessage}
-                      delay={index * 0.1}
                       totalMessages={messages.length}
                     />
                   ))}
