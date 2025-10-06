@@ -72,19 +72,17 @@ const getBalloonSize = (text: string, totalMessagesCount: number = 8) => {
   }
 }
 
-const MessageCard = ({ 
-  message, 
-  onVerify, 
-  delay,
+const MessageCard = ({
+  message,
+  onVerify,
   isBalloonTheme = false,
   balloonColorIndex,
   onOutOfBounds,
   onBalloonClick,
   totalMessages = 8
-}: { 
+}: {
   message: PeaceMessage
   onVerify: (message: PeaceMessage) => void
-  delay: number
   isBalloonTheme?: boolean
   balloonColorIndex?: number
   onOutOfBounds?: (messageId: string) => void
@@ -315,9 +313,6 @@ export function WaitingScreen() {
     // 最大バルーンサイズを動的に計算
     const maxBalloonSize = Math.max(...messages.map(m => getBalloonSizeNumeric(m.text, messages.length)))
     
-    // シンプルで確実な配置設定 - 左上優先
-    const balloonRadius = maxBalloonSize / 2
-    
     // 風船間隔を広げるための設定 - 左側・中央やや下に配置
     const leftMargin = 10   // 左側マージンをさらに削減
     const rightMargin = 200 // 右マージンを増やして左側エリアに集中
@@ -347,8 +342,6 @@ export function WaitingScreen() {
     console.log(`Cell size: ${cellWidth}x${cellHeight}`)
     
     messages.forEach((message, index) => {
-      const balloonSize = getBalloonSizeNumeric(message.text, messages.length)
-      
       // グリッド位置を計算
       const col = index % cols
       const row = Math.floor(index / cols)
@@ -406,7 +399,7 @@ export function WaitingScreen() {
       }, 100)
       setPreviousMessageCount(messages.length)
     }
-  }, [theme, messages.length])
+  }, [theme, messages.length, adjustBalloonPositions, messages])
 
   // Adjust positions when messages change
   useEffect(() => {
@@ -422,7 +415,7 @@ export function WaitingScreen() {
       
       setPreviousMessageCount(messages.length)
     }
-  }, [messages.length, theme, previousMessageCount])
+  }, [messages.length, theme, previousMessageCount, adjustBalloonPositions, messages])
 
   // Re-adjust on window resize
   useEffect(() => {
@@ -436,7 +429,7 @@ export function WaitingScreen() {
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [theme, messages.length])
+  }, [theme, messages.length, adjustBalloonPositions, messages])
 
   // Handle balloon going out of bounds
   const handleBalloonOutOfBounds = (messageId: string) => {
